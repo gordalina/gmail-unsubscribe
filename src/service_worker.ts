@@ -8,6 +8,6 @@ chrome.commands.onCommand.addListener((command) => {
       return;
     }
 
-    chrome.tabs.sendMessage(tab.id, { gmail_unsubscribe: true });
+    chrome.tabs.sendMessage(tab.id, { command: 'unsubscribe' });
   });
 });

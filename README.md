@@ -1,6 +1,6 @@
 # Gmail Unsubscribe
 
-Unsubscribes from a mailing list by pressing `Shift + P`
+Unsubscribes from a mailing list by pressing `Command + U` (Mac) or `Ctrl + U` (Windows/Linux) on a open email in Gmail.
 
 ## Installing and Running
 

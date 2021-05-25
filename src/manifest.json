@@ -6,10 +6,7 @@
     "128": "icon-128.png"
   },
   "background": {
-    "scripts": [
-      "background.bundle.js"
-    ],
-    "persistent": false
+    "service_worker": "service_worker.bundle.js"
   },
   "commands": {
     "unsubscribe": {
@@ -32,5 +29,5 @@
   "permissions": [
     "active_tab"
   ],
-  "manifest_version": 2
+  "manifest_version": 3
 }

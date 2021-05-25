@@ -10,7 +10,7 @@ var extensions: string[] = ['.ts', '.png'];
 var options: Configuration = {
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   entry: {
-    background: path.join(__dirname, 'src', 'background.ts'),
+    service_worker: path.join(__dirname, 'src', 'service_worker.ts'),
     content_script: path.join(__dirname, 'src', 'content_script.ts'),
   },
   output: {
