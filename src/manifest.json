@@ -5,10 +5,32 @@
     "48": "icon-48.png",
     "128": "icon-128.png"
   },
-  "content_scripts": [{
-    "matches": ["https://mail.google.com/*"],
-    "js": ["contentScript.bundle.js"]
-  }],
-  "manifest_version": 2,
-  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+  "background": {
+    "scripts": [
+      "background.bundle.js"
+    ],
+    "persistent": false
+  },
+  "commands": {
+    "unsubscribe": {
+      "description": "Unsubscribe from mailing list",
+      "suggested_key": {
+        "default": "Ctrl+U"
+      }
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mail.google.com/*"
+      ],
+      "js": [
+        "content_script.bundle.js"
+      ]
+    }
+  ],
+  "permissions": [
+    "active_tab"
+  ],
+  "manifest_version": 2
 }

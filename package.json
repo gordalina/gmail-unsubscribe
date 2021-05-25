@@ -12,7 +12,7 @@
     "start": "NODE_ENV=development yarn webpack --watch",
     "package": "npm run build && npm run zip",
     "zip": "zip -rjXFS gmail-unsubscribe.zip build",
-    "prettier": "prettier --write '**/*.{ts,js}'"
+    "prettier": "prettier --write --ignore-path=build '**/*.{ts,js}'"
   },
   "dependencies": {
     "@types/chrome": "0.0.125"

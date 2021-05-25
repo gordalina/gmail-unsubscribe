@@ -22,3 +22,6 @@ Unsubscribes from a mailing list by pressing `Shift + P`
 ## Packaging extension
 
 1. Run `yarn package`
+
+
+chrome://extensions/shortcuts

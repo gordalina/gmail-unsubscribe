@@ -10,7 +10,8 @@ var extensions: string[] = ['.ts', '.png'];
 var options: Configuration = {
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   entry: {
-    contentScript: path.join(__dirname, 'src', 'index.ts'),
+    background: path.join(__dirname, 'src', 'background.ts'),
+    content_script: path.join(__dirname, 'src', 'content_script.ts'),
   },
   output: {
     path: path.resolve(__dirname, 'build'),
@@ -38,7 +39,6 @@ var options: Configuration = {
         {
           from: 'src/manifest.json',
           to: path.join(__dirname, 'build'),
-          force: true,
           transform: function (content, path) {
             // generates the manifest file using the package.json informations
             return Buffer.from(
@@ -64,7 +64,7 @@ var options: Configuration = {
 };
 
 if (process.env.NODE_ENV === 'development') {
-  options.devtool = 'eval-cheap-module-source-map';
+  options.devtool = 'source-map';
 } else {
   options.optimization = {
     minimize: true,
