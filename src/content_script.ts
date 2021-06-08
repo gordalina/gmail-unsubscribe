@@ -6,8 +6,8 @@ chrome.runtime.onMessage.addListener((message, sender, res) => {
   }
 
   switch (message.command) {
-    case 'unsubscribe': unsubscribe();
+    case 'unsubscribe':
+      res({ unsubscribed: unsubscribe() });
+      break;
   }
-
-  res({ok: true})
 });

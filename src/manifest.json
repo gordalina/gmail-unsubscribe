@@ -1,4 +1,5 @@
 {
+  "manifest_version": 3,
   "name": "Gmail Unsubscribe",
   "icons": {
     "16": "icon-16.png",
@@ -25,9 +26,5 @@
         "content_script.bundle.js"
       ]
     }
-  ],
-  "permissions": [
-    "active_tab"
-  ],
-  "manifest_version": 3
+  ]
 }

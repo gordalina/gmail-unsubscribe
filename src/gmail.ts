@@ -13,32 +13,39 @@ function clickUnsubscribeButton(topButton: HTMLElement) {
 function clickUnsubscribeDialogButton() {
   const [dialogButton] = getNodesMatching('button', /^Unsubscribe$/);
 
-  if (dialogButton) {
-    dispatchEvent(dialogButton, 'click');
-  } else {
+  if (!dialogButton) {
     console.log("Couldn't click unsubscribe button in dialog.");
+    return false;
   }
+
+  dispatchEvent(dialogButton, 'click');
+  return true;
 }
 
 function getUnsubscribeLinks(): HTMLLinkElement[] {
-  return (
-    getLinksMatching(/unsub|optout|opt out|opt-out/i) ||
-    getLinksMatching(/click here|clickhere/i) ||
-    getLinksMatching(/email preferences/i) ||
-    getLinksMatching(/here/i)
-  );
+  const pattern = [
+    `unsub(scribe)?`,
+    `opt(-| )?out`,
+    `click ?here`,
+    `email (preferences|settings)`,
+    `here`
+  ];
+
+  return getLinksMatching(new RegExp(pattern.join('|'), 'i'));
 }
 
 function unsubscribeFromLinks() {
-  const unsubs = getUnsubscribeLinks();
-  const link = unsubs.filter((link) => link.href).pop();
+  const links = getUnsubscribeLinks();
+  const link = links.filter((link) => link.href).pop();
 
-  if (link) {
-    console.log(`Opening an unsubscribe link: ${link.href}`);
-    window.open(link.href, '_blank')?.focus();
-  } else {
+  if (!link) {
     modal("Couldn't find any unsubscribe links.");
+    return false;
   }
+
+  console.log(`Opening an unsubscribe link: ${link.href}`);
+  window.open(link.href, '_blank')?.focus();
+  return true;
 }
 
 export function unsubscribe() {
@@ -47,9 +54,9 @@ export function unsubscribe() {
 
   if (unsubscribeButton) {
     console.log('Found unsubscribe button.');
-    clickUnsubscribeButton(unsubscribeButton);
+    return clickUnsubscribeButton(unsubscribeButton);
   } else {
     console.log("Couldn't find unsubscribe button.");
-    unsubscribeFromLinks();
+    return unsubscribeFromLinks();
   }
 }

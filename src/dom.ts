@@ -33,7 +33,7 @@ export function modal(text: string, timeout = 5000) {
     'padding: 8px 52px 8px 24px',
     'color: #5f6368;',
     'border-radius: 4px',
-    'box-shadow: 0 1px 3px 0 rgba(60,64,67,0.302),0 4px 8px 3px rgba(60,64,67,0.149);',
+    'box-shadow: 0 1px 3px 0 rgba(60, 64, 67, 0.302), 0 4px 8px 3px rgba(60, 64, 67, 0.149);',
     'font-size: .875rem',
     'letter-spacing: .2px',
     'min-height: 36px',
