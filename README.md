@@ -23,6 +23,7 @@ Unsubscribes from a mailing list by pressing `Command + U` (Mac) or `Ctrl + U` (
 ## Packaging extension
 
 1. Run `yarn package`
+2. Run `yarn version <--major|--minor|--patch>`
 
 ## Credits
 
