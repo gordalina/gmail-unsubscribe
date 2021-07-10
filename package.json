@@ -9,10 +9,11 @@
   },
   "scripts": {
     "build": "NODE_ENV=production yarn webpack",
-    "start": "NODE_ENV=development yarn webpack --watch",
     "package": "npm run build && npm run zip",
-    "zip": "zip -rjXFS gmail-unsubscribe.zip build",
-    "prettier": "prettier --write --ignore-path=build '**/*.{ts,js}'"
+    "postversion": "git push && git push --tags",
+    "prettier": "prettier --write --ignore-path=build '**/*.{ts,js}'",
+    "start": "NODE_ENV=development yarn webpack --watch",
+    "zip": "zip -rjXFS gmail-unsubscribe.zip build"
   },
   "dependencies": {
     "@types/chrome": "0.0.125"
