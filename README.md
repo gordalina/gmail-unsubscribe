@@ -1,6 +1,7 @@
-![](src/icons/icon-128.png)
 
 # Gmail Unsubscribe
+
+![](src/icons/icon-128.png)
 
 Unsubscribes from a mailing list by pressing `Command + U` (Mac) or `Ctrl + U` (Windows/Linux) on a open email in Gmail.
 
