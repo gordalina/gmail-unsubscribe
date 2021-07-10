@@ -1,6 +1,5 @@
 import webpack, { Configuration } from 'webpack';
 import path from 'path';
-import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
 
@@ -14,6 +13,7 @@ var options: Configuration = {
     content_script: path.join(__dirname, 'src', 'content_script.ts'),
   },
   output: {
+    clean: true,
     path: path.resolve(__dirname, 'build'),
     filename: '[name].bundle.js',
     publicPath: ASSET_PATH,
@@ -27,11 +27,6 @@ var options: Configuration = {
     extensions,
   },
   plugins: [
-    // clean the build folder
-    new CleanWebpackPlugin({
-      verbose: true,
-      cleanStaleWebpackAssets: false,
-    }),
     // expose and write the allowed env vars on the compiled bundle
     new webpack.EnvironmentPlugin(['NODE_ENV']),
     new CopyWebpackPlugin({
