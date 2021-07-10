@@ -3,14 +3,10 @@
 # dependencies
 /node_modules
 
-# testing
-/coverage
-
 # production
 /build
 
 # misc
 .DS_Store
 
-package-lock.json
 gmail-unsubscribe.zip

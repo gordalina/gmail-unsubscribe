@@ -1,3 +1,5 @@
+![](src/icons/icon-128.png)
+
 # Gmail Unsubscribe
 
 Unsubscribes from a mailing list by pressing `Command + U` (Mac) or `Ctrl + U` (Windows/Linux) on a open email in Gmail.
@@ -23,5 +25,6 @@ Unsubscribes from a mailing list by pressing `Command + U` (Mac) or `Ctrl + U` (
 
 1. Run `yarn package`
 
+## Credits
 
-chrome://extensions/shortcuts
+Thanks to @maaaayoo for the logo
