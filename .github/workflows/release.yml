@@ -1,0 +1,47 @@
+name: yml
+
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  release:
+    runs-on: ubuntu-20.04
+    name: Create & Publish Release
+    if: ${{ github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags') }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.4
+          cache: 'yarn'
+
+      - name: Install Dependencies
+        run: yarn install
+
+      - name: Create Release Assets
+        run: yarn package
+
+      - name: Tag
+        id: tag
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+
+      - name: Create GitHub Release
+        id: create_release
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          name: ${{ steps.tag.outputs.VERSION }}
+          tag_name: ${{ steps.tag.outputs.VERSION }}
+          draft: false
+          prerelease: ${{ contains(github.ref, '-') }}
+          files: |
+            gmail-unsubscribe.zip
+            LICENSE
