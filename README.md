@@ -3,7 +3,11 @@
 
 Unsubscribes from a mailing list by pressing `Command + U` (Mac) or `Ctrl + U` (Windows/Linux) on a open email in Gmail.
 
-## Installing and Running
+## Installation
+
+- [Download in Chrome Web Store](https://chrome.google.com/webstore/detail/gmail-unsubscribe/gkakfbcilfllnomafmgaekkhcmogalah)
+
+## Development
 
 1. Clone this repository
 
