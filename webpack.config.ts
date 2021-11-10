@@ -47,8 +47,7 @@ var options: Configuration = {
         },
         {
           from: 'src/icons/icon-*.png',
-          to: path.join(__dirname, 'build'),
-          flatten: true,
+          to: `${path.join(__dirname, 'build')}/[name][ext]`,
         },
       ],
     }),
