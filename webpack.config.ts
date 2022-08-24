@@ -32,7 +32,7 @@ var options: Configuration = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: 'src/manifest.json',
+          from: 'manifest.json',
           to: path.join(__dirname, 'build'),
           transform: function (content, path) {
             // generates the manifest file using the package.json informations

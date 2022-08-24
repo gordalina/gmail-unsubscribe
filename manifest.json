@@ -13,7 +13,8 @@
     "unsubscribe": {
       "description": "Unsubscribe from mailing list",
       "suggested_key": {
-        "default": "Ctrl+U"
+        "default": "Alt+U",
+        "mac": "Command+U"
       }
     }
   },
