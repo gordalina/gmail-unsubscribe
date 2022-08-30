@@ -3,7 +3,7 @@ chrome.commands.onCommand.addListener((command) => {
     return;
   }
 
-  chrome.tabs.query({active: true, currentWindow: true}, ([tab]) => {
+  chrome.tabs.query({ active: true, currentWindow: true }, ([tab]) => {
     if (tab === undefined || typeof tab.id !== 'number') {
       return;
     }

@@ -11,7 +11,7 @@
     "build": "NODE_ENV=production yarn webpack",
     "package": "npm run build && npm run zip",
     "postversion": "git push && git push --tags",
-    "prettier": "prettier --write --ignore-path=build '**/*.{ts,js}'",
+    "prettier": "prettier --write .",
     "start": "NODE_ENV=development yarn webpack --watch",
     "zip": "zip -rjXFS gmail-unsubscribe.zip build"
   },
