@@ -28,7 +28,7 @@ function getUnsubscribeLinks(): HTMLLinkElement[] {
     `opt(-| )?out`,
     `click ?here`,
     `email (preferences|settings)`,
-    `here`
+    `here`,
   ];
 
   return getLinksMatching(new RegExp(pattern.join('|'), 'i'));

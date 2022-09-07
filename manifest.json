@@ -20,12 +20,8 @@
   },
   "content_scripts": [
     {
-      "matches": [
-        "https://mail.google.com/*"
-      ],
-      "js": [
-        "content_script.bundle.js"
-      ]
+      "matches": ["https://mail.google.com/*"],
+      "js": ["content_script.bundle.js"]
     }
   ]
 }
