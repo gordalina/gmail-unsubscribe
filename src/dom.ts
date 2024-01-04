@@ -2,9 +2,7 @@ export function getNodesMatching(
   tagName: string,
   innerTextPattern: RegExp
 ): HTMLElement[] {
-  const nodes = document.getElementsByTagName(
-    tagName
-  ) as HTMLCollectionOf<HTMLElement>;
+  const nodes: NodeListOf<HTMLElement> = document.querySelectorAll(tagName);
 
   return Array.from(nodes).filter(
     (node: HTMLElement) =>

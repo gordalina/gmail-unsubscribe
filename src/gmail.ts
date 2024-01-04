@@ -5,7 +5,7 @@ import {
 } from './dom';
 
 function clickUnsubscribeDialogButton() {
-  const [dialogButton] = getNodesMatching('button', /^Unsubscribe$/);
+  const [dialogButton] = getNodesMatching('div > button', /^Unsubscribe$/);
 
   if (!dialogButton) {
     console.log("Couldn't click unsubscribe button in dialog.");
@@ -44,7 +44,7 @@ function unsubscribeFromLinks() {
 
 export function unsubscribe() {
   console.log('Unsubscribe triggered.');
-  const [unsubscribeButton] = getNodesMatching('span', /^Unsubscribe$/);
+  const [unsubscribeButton] = getNodesMatching('h3 > div > span', /^Unsubscribe$/);
 
   if (unsubscribeButton) {
     console.log('Found unsubscribe button.');
