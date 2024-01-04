@@ -16,12 +16,6 @@ export function getLinksMatching(pattern: RegExp): HTMLLinkElement[] {
   return getNodesMatching('a', pattern) as HTMLLinkElement[];
 }
 
-export function dispatchEvent(element: HTMLElement, eventType: string): void {
-  const evt = document.createEvent('Events');
-  evt.initEvent(eventType, true, false);
-  element.dispatchEvent(evt);
-}
-
 export function modal(text: string, timeout = 5000) {
   const modal = document.createElement('div');
   const styles = [

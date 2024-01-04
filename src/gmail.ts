@@ -1,14 +1,8 @@
 import {
-  dispatchEvent,
   getNodesMatching,
   getLinksMatching,
   modal,
 } from './dom';
-
-function clickUnsubscribeButton(topButton: HTMLElement) {
-  dispatchEvent(topButton, 'click');
-  setTimeout(clickUnsubscribeDialogButton, 500);
-}
 
 function clickUnsubscribeDialogButton() {
   const [dialogButton] = getNodesMatching('button', /^Unsubscribe$/);
@@ -18,7 +12,7 @@ function clickUnsubscribeDialogButton() {
     return false;
   }
 
-  dispatchEvent(dialogButton, 'click');
+  dialogButton.click();
   return true;
 }
 
@@ -54,7 +48,10 @@ export function unsubscribe() {
 
   if (unsubscribeButton) {
     console.log('Found unsubscribe button.');
-    return clickUnsubscribeButton(unsubscribeButton);
+    unsubscribeButton.click();
+    setTimeout(clickUnsubscribeDialogButton, 500);
+
+    return true;
   } else {
     console.log("Couldn't find unsubscribe button.");
     return unsubscribeFromLinks();
