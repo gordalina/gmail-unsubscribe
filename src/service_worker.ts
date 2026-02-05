@@ -1,13 +1,5 @@
-chrome.commands.onCommand.addListener((command) => {
-  if (command !== 'unsubscribe') {
-    return;
-  }
+chrome.action.onClicked.addListener((tab) => {
+  if (!tab.id) return;
 
-  chrome.tabs.query({ active: true, currentWindow: true }, ([tab]) => {
-    if (tab === undefined || typeof tab.id !== 'number') {
-      return;
-    }
-
-    chrome.tabs.sendMessage(tab.id, { command: 'unsubscribe' });
-  });
+  chrome.tabs.sendMessage(tab.id, { command: 'unsubscribe' });
 });

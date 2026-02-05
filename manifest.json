@@ -9,13 +9,16 @@
   "background": {
     "service_worker": "service_worker.bundle.js"
   },
+  "action": {
+    "default_title": "Unsubscribe from mailing list"
+  },
   "commands": {
-    "unsubscribe": {
-      "description": "Unsubscribe from mailing list",
+    "_execute_action": {
       "suggested_key": {
-        "default": "Alt+U",
-        "mac": "Command+U"
-      }
+        "default": "Ctrl+U",
+        "mac": "Command+Shift+U"
+      },
+      "description": "Unsubscribe from mailing list"
     }
   },
   "content_scripts": [
