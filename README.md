@@ -2,7 +2,7 @@
 
 ![](src/icons/icon-128.png)
 
-Unsubscribes from a mailing list by pressing `Command + U` (Mac) or `Alt + U` (Windows/Linux) on a open email in Gmail.
+Unsubscribes from a mailing list by pressing `Command + Shift + U` (Mac) or `Alt + U` (Windows/Linux) on a open email in Gmail.
 
 It's possible to re-bind the shorcut by visiting [chrome://extensions/shortcuts](chrome://extensions/shortcuts).
 
